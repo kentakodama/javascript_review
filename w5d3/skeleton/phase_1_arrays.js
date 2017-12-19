@@ -43,6 +43,7 @@ Array.prototype.transpose = function () {
   let i = 0
   while(i < this[0].length) {
     reversed.push([])
+    i ++;
   }
   
   let y = 0 
