@@ -32,6 +32,7 @@ Student.prototype.courseLoad = function() {
   return courseCredits
 }
 
+
 function Course(name, department, credits) {
   
   this.name = name;
