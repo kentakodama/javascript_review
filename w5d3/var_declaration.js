@@ -24,3 +24,18 @@ animals.cetacea = 'beluga whale';
 animals.rodent = 'capybara'; // This works!
 
 animals = {cetacea: 'beluga whale'}; // Raises an error
+
+
+
+//scope 
+
+var foo = 'qux';
+var myFunction = function() {
+  var foo = 'bar';
+};
+
+log( foo ); // logs 'qux'
+myFunction();
+log( foo ); // still logs 'qux'
+
+
