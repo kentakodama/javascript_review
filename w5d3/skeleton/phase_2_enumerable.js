@@ -21,3 +21,20 @@ Array.prototype.myMap = function (callback) {
 };
 
 [1, 2, 3].myMap((x)=> x*2 )
+
+Array.prototype.myReduce = function (callback, accumulator) {
+  
+  let i = 0;
+  if (accumulator === undefined) {
+    accumulator = this[0]
+    i ++;
+  }
+  
+  while(i < this.length) {
+    accumulator = callback(this[i], accumulator)
+    i ++;
+  }
+  
+  return accumulator;
+  
+};
