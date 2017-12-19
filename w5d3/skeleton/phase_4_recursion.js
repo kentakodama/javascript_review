@@ -24,3 +24,13 @@ const sumRec = (arr) => {
   return arr[0] + sumRec(arr.slice(1)) 
   
 }
+
+const exponent = (base, exp) => {
+  
+  if (exp === 1) {
+    return base
+  }
+  
+  return base * exponent(base, exp-1)
+  
+} 
