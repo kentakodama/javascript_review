@@ -19,3 +19,21 @@ Array.prototype.bubbleSort = function () {
   return this
   
 };
+
+String.prototype.substrings = function () {
+  
+  let subs = []
+  
+  //loop through each substring 
+  
+  for (var i = 0; i < this.length; i++) {
+    for (var j = this.length - i; j > 0; j--) {
+      subs.push(this.slice(i, j))
+    }
+  }
+  return subs
+  //push to subs if uniq not included 
+  
+  
+  //return subs
+};
