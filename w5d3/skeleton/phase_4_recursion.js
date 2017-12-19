@@ -14,3 +14,13 @@ const range = (start, end) => {
   return [start].concat(range(start+1, end))
   //must have return statement for inductive step
 }
+
+const sumRec = (arr) => {
+  
+  if(arr.length === 1) {
+    return arr[0]
+  }
+  
+  return arr[0] + sumRec(arr.slice(1)) 
+  
+}
