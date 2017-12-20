@@ -16,7 +16,7 @@ class Clock {
   _tick() {
     // 1. Increment the time by one second.
     // 2. Call printTime.
-    
+    //HERE IS THE TRICKY PART! 
     setInterval(() => {
       this.seconds ++;
       this.printTime()
