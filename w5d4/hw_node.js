@@ -17,3 +17,9 @@ const Noodles = new Dog ();
 
 
 //ways to call functions
+
+//all same
+
+Noodles.chase(Markov)
+Noodles.chase.apply(Markov, [Noodles])
+Noodles.chase.call(Markov, Noodles)
