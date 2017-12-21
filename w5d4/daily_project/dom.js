@@ -8,3 +8,16 @@ document.getElementsByClassName(selector)
 
 document.querySelectorAll(selector)
 //Returns a NodeList of Elements matching the CSS selector.
+
+//this will create an li, grab existing dom elenent, and append the li to the element
+<ul id="cats">
+</ul>
+
+<script>
+  window.setTimeout( () => {
+    const li = document.createElement("li");
+    const ul = document.getElementById("cats");
+    li.textContent = "This is injected by JavaScript";
+    ul.appendChild(li);
+  }, 1000);
+</script>
