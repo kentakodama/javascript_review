@@ -127,13 +127,33 @@ View.prototype.exercise2 = function () {
 View.prototype.exercise3 = function () {
   //Challenge: Add an <h1> with the text 'i love jquery' under the grid.
   //Result: An <h1> with the text 'i love jquery' appears under the grid.
-
+  const $easel = $("#easel");
+  let $h1 = $('<h1></h1>');
+  $h1.text('i love jquery')
+  
+  $easel.append($h1)
+  
   //your code here!
 };
 
 View.prototype.exercise4 = function () {
   //Challenge: Write your first name in every other square.
   //Result: Your name appears in every other square.
+  
+  //grab all li in array like object 
+  const $li = $('li');
+  //iterate with index 
+  
+  let i = 0;
+  while(i < $li.length) {
+    if (i % 2 === 0) {
+      console.log($li[i]);
+      console.log($li[i].dataset.pos);
+      $li[i].style.backgroundColor="green"
+    }
+    i ++;
+  }
+  //if index is even 
 
   //your code here!
 };
