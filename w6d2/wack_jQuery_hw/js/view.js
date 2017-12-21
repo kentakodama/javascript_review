@@ -62,7 +62,7 @@ View.prototype.exercise4 = function () {
   while(i < $li.length) {
     if (i % 2 === 0) {
       console.log($li[i]);
-      console.log($li[i].dataset.pos);
+      console.log($li[i].dataset.pos); 
       $li[i].style.backgroundColor="green"
     }
     i ++;
@@ -81,6 +81,20 @@ View.prototype.exercise5 = function () {
   //  'data-pos' of every square
 
   //your code here!
+  
+  //set event handler on all children of ul 
+  
+  //when clicked, current target, access dataset and alert 
+  
+  var $listItems = $("li");
+  $listItems.on("click", event => {
+    const currentTarget = event.currentTarget;
+    const $currentTarget = $(currentTarget);
+    console.log($currentTarget);
+    alert($currentTarget.context.dataset.pos);
+  })
+  
+  
 };
 
 View.prototype.exercise6 = function () {
@@ -89,7 +103,16 @@ View.prototype.exercise6 = function () {
   //should become a beautiful rainbow of colors.
 
   //hint: use window._randomColorString() (defined at top) to get a random color!
+  var $listItems = $("li");
+  console.log($listItems);
+  let i = 0;
+  while(i < $listItems.length) {
 
+    let color = window._randomColorString();
+    $listItems[i].style.backgroundColor=`${color}`
+
+    i++;
+  }
   //your code here!
 };
 
@@ -101,6 +124,15 @@ View.prototype.exercise7 = function(){
   //rainbow.
 
   //your code here!
+  
+  var $listItems = $("li");
+  $listItems.on('mouseover', event => {
+    let currentTarget = event.currentTarget;
+    let $currentTarget = $(currentTarget)
+    let color = currentTarget.style.backgroundColor
+    console.log(color);
+  })
+  
 };
 
 
