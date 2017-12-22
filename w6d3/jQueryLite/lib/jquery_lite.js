@@ -68,19 +68,28 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
+
+const DomNodeCollection = __webpack_require__(1);
 
 window.$l = (selector) => {
   
   if(typeof selector === 'string') {
     let nodeList = document.querySelectorAll(selector)
-    //return nodeList.slice()
+    //return nodeList.slice() doesnt work
     return Array.prototype.slice.call(nodeList)
+    //above works
   }
   
 }
 
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: /Users/kentakodama/Desktop/app_academy/review/w6d3/jQueryLite/lib/dom_node_collection.js Unexpected token (2:40)\nYou may need an appropriate loader to handle this file type.\n| \n| module.exports = class DOMNodeCollection(htmlElements) {\n|   \n|   constructor() {");
 
 /***/ })
 /******/ ]);
