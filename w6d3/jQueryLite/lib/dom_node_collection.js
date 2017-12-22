@@ -1,8 +1,10 @@
-
-module.exports = class DOMNodeCollection(htmlElements) {
+class DOMNodeCollection {
   
-  constructor() {
-    this.htmlElements = htmlElements
+  //args go here not in the class level, must go in constructor
+  constructor(nodes) {
+    this.nodes = nodes
   }
   
 }
+
+module.exports = DomNodeCollection;

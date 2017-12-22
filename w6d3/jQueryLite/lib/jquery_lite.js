@@ -63,33 +63,45 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports) {
+
+class DOMNodeCollection {
+  
+  //args go here not in the class level, must go in constructor
+  constructor(nodes) {
+    this.nodes = nodes
+  }
+  
+}
+
+module.exports = DomNodeCollection;
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-const DomNodeCollection = __webpack_require__(1);
+const DomNodeCollection = __webpack_require__(0);
 
 window.$l = (selector) => {
   
   if(typeof selector === 'string') {
     let nodeList = document.querySelectorAll(selector)
     //return nodeList.slice() doesnt work
-    return Array.prototype.slice.call(nodeList)
+    let htmlElements = Array.prototype.slice.call(nodeList)
+    return DomNodeCollection(htmlElements)
     //above works
+  } else if (selector instanceof HTMLElement) {
+    return DomNodeCollection([selector])
   }
   
 }
 
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-throw new Error("Module parse failed: /Users/kentakodama/Desktop/app_academy/review/w6d3/jQueryLite/lib/dom_node_collection.js Unexpected token (2:40)\nYou may need an appropriate loader to handle this file type.\n| \n| module.exports = class DOMNodeCollection(htmlElements) {\n|   \n|   constructor() {");
 
 /***/ })
 /******/ ]);
