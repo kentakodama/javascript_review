@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
   // --- your code here!
-  let favoriteSubmit = document.querySelector('favorite-submit')
+  let favoriteSubmit = document.querySelector('.favorite-submit')
   console.log(favoriteSubmit);
   favoriteSubmit.addEventListener('click', (event) => {
     console.log('hello');
@@ -66,10 +66,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
   
-  favoriteSubmit = document.querySelector('photo-url-submit')
-  console.log(favoriteSubmit);
-  favoriteSubmit.addEventListener('click', (event) => {
-    console.log('hello');
+  let photoSubmit = document.querySelector('.photo-url-submit')
+
+  photoSubmit.addEventListener('click', (event) => {
     event.preventDefault();
+    
+    let url = document.querySelector(".photo-url-input").value
+    //grab value 
+
+    //create list with img inside 
+    // var tag = document.createElement("li");
+    // tag.innerHTML = '<span class="toggle">Jan</span>';
+    
+    let li = document.createElement('li');
+    
+    let img = document.createElement('img');
+    img.src = url
+    
+    li.appendChild(img)
+    
+    console.log(li.innerHTML.src);
+    let photos = document.querySelector('.dog-photos')
+    photos.appendChild(li)
+  
+    
+  });
+    //set src of img to value url 
+    
+    //clear form
 
 });
