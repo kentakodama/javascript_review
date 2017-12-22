@@ -24,3 +24,4 @@ outerDiv.addEventListener('click', function (e) {
   console.log(e.target); // the inner div
   console.log(e.currentTarget); // the outer div
 });
+
