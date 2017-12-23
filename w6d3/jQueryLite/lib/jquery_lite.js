@@ -151,14 +151,31 @@ class DOMNodeCollection {
     
   }
   
-  
-  on(userEvent, callback) {
-    
-    this.nodes.forEach((node) => {
-      node.addEventListener(userEvent, callback);
-    })
-    
+  //here we have to add an eventKey to the properties of the element manually 
+  on(eventName, callback) {
+    this.each((node) => {
+      node.addEventListener(eventName, callback);
+      const eventKey = `jqliteEvents-${eventName}`;
+      if (typeof node[eventKey] === "undefined") {
+        node[eventKey] = [];
+      }
+      node[eventKey].push(callback);
+    });
   }
+  
+  
+  off(eventName) {
+    this.each((node) => {
+      const eventKey = `jqliteEvents-${eventName}`;
+      if (node[eventKey]) {
+        node[eventKey].forEach((callback) => {
+          node.removeEventListener(eventName, callback);
+        });
+      }
+      node[eventKey] = [];
+    });
+  }
+
     
 }
 
