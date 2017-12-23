@@ -77,13 +77,15 @@ class DOMNodeCollection {
     this.nodes = nodes
   }
   
+  
+  //correct, but must be executed like this in console: $ul.html('<li>first item</li>')
   html(string) {
     
     if(string === undefined) {
       return this.nodes[0].innerHTML;
     } else {
       this.nodes.forEach((node) => {
-        node.innerHTML = new DOMNodeCollection(string);
+        node.innerHTML = string;
       })
     }
   }
@@ -92,9 +94,10 @@ class DOMNodeCollection {
     this.html('')
   }
 
+  //correct, but must be executed like this in console: $ul.html('<li>first item</li>')
   append(child) {
     
-    if(child instanceof 'string' || child instanceof HTMLElement) {
+    if(child instanceof String || child instanceof HTMLElement) {
       let newNode = new DOMNodeCollection(child);
       this.nodes.forEach((node) => {
         node.innerHTML += newNode
