@@ -83,7 +83,7 @@ class DOMNodeCollection {
       return this.nodes[0].innerHTML;
     } else {
       this.nodes.forEach((node) => {
-        node.innerHTML = DomNodeCollection(string);
+        node.innerHTML = new DomNodeCollection(string);
       })
     }
   }
@@ -95,7 +95,7 @@ class DOMNodeCollection {
   append(child) {
     
     if(child instanceof 'string' || child instanceof HTMLElement) {
-      let newNode = DomNodeCollection(child);
+      let newNode = new DomNodeCollection(child);
       this.nodes.forEach((node) => {
         node.innerHTML += newNode
       })
@@ -123,7 +123,7 @@ class DOMNodeCollection {
     this.nodes.forEach((node) => {
       children += Array.from(node.innerHTML)
     })
-    return DomNodeCollection(children)
+    return new DomNodeCollection(children)
   }
   
   parent() {
@@ -131,16 +131,16 @@ class DOMNodeCollection {
     this.nodes.forEach((node) => {
       parents += node.parentNode
     })
-    return DomNodeCollection(parents)
+    return new DomNodeCollection(parents)
   }
   
   find(selector) {
     let matches = []
     this.nodes.forEach((node) => {
-      matches.push(node.querySelectorAll(selector));
+      matches += node.querySelectorAll(selector);
     })
     
-    return DomNodeCollection(matches)
+    return new DomNodeCollection(matches)
   }
   
   remove() {
