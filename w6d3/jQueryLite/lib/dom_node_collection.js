@@ -61,7 +61,32 @@ class DOMNodeCollection {
     })
     return DomNodeCollection(parents)
   }
+  
+  find(selector) {
+    let matches = []
+    this.nodes.forEach((node) => {
+      matches.push(node.querySelectorAll(selector));
+    })
+    
+    return DomNodeCollection(matches)
+  }
+  
+  remove() {
+    
+    this.nodes.forEach((node) => {
+      node.parentNode.removeChild(node)
+    })
+    
+  }
     
 }
 
+
+
+
 module.exports = DomNodeCollection;
+
+
+
+
+
