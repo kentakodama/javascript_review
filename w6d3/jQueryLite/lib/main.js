@@ -7,10 +7,10 @@ window.$l = (selector) => {
     let nodeList = document.querySelectorAll(selector)
     //return nodeList.slice() doesnt work
     let htmlElements = Array.prototype.slice.call(nodeList)
-    return DomNodeCollection(htmlElements)
+    return new DomNodeCollection(htmlElements)
     //above works
   } else if (selector instanceof HTMLElement) {
-    return DomNodeCollection([selector])
+    return new DomNodeCollection([selector])
   } else {
     return selector
   }

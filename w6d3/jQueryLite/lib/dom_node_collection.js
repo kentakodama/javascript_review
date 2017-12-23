@@ -78,6 +78,15 @@ class DOMNodeCollection {
     })
     
   }
+  
+  
+  on(userEvent, callback) {
+    
+    this.nodes.forEach((node) => {
+      node.addEventListener(userEvent, callback);
+    })
+    
+  }
     
 }
 
