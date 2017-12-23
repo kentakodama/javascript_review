@@ -11,6 +11,8 @@ window.$l = (selector) => {
     //above works
   } else if (selector instanceof HTMLElement) {
     return DomNodeCollection([selector])
+  } else {
+    return selector
   }
   
 }
