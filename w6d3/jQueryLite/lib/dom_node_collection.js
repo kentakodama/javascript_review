@@ -45,6 +45,22 @@ class DOMNodeCollection {
       node.classList.remove(string)
     })
   }
+  
+  children() {
+    let children = []
+    this.nodes.forEach((node) => {
+      children += Array.from(node.innerHTML)
+    })
+    return DomNodeCollection(children)
+  }
+  
+  parent() {
+    let parents = [];
+    this.nodes.forEach((node) => {
+      parents += node.parentNode
+    })
+    return DomNodeCollection(parents)
+  }
     
 }
 
