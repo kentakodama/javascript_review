@@ -11,7 +11,7 @@ class DOMNodeCollection {
       return this.nodes[0].innerHTML;
     } else {
       this.nodes.forEach((node) => {
-        node.innerHTML = new DomNodeCollection(string);
+        node.innerHTML = new DOMNodeCollection(string);
       })
     }
   }
@@ -23,7 +23,7 @@ class DOMNodeCollection {
   append(child) {
     
     if(child instanceof 'string' || child instanceof HTMLElement) {
-      let newNode = new DomNodeCollection(child);
+      let newNode = new DOMNodeCollection(child);
       this.nodes.forEach((node) => {
         node.innerHTML += newNode
       })
@@ -51,7 +51,7 @@ class DOMNodeCollection {
     this.nodes.forEach((node) => {
       children += Array.from(node.innerHTML)
     })
-    return new DomNodeCollection(children)
+    return new DOMNodeCollection(children)
   }
   
   parent() {
@@ -59,7 +59,7 @@ class DOMNodeCollection {
     this.nodes.forEach((node) => {
       parents += node.parentNode
     })
-    return new DomNodeCollection(parents)
+    return new DOMNodeCollection(parents)
   }
   
   find(selector) {
@@ -68,7 +68,7 @@ class DOMNodeCollection {
       matches += node.querySelectorAll(selector);
     })
     
-    return new DomNodeCollection(matches)
+    return new DOMNodeCollection(matches)
   }
   
   remove() {
@@ -110,7 +110,7 @@ class DOMNodeCollection {
 
 
 
-module.exports = DomNodeCollection;
+module.exports = DOMNodeCollection;
 
 
 
