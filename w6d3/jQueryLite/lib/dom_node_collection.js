@@ -4,6 +4,11 @@ class DOMNodeCollection {
   constructor(nodes) {
     this.nodes = nodes
   }
+  
+  
+  //correct, but must be executed like this in console: $ul.html('<li>first item</li>')
+  html(string) {
+    
     if(string === undefined) {
       return this.nodes[0].innerHTML;
     } else {
